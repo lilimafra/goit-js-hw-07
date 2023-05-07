@@ -21,9 +21,17 @@ const builderGallery = galleryItems
     
 
 galleryContainer.insertAdjacentHTML("afterbegin", builderGallery);
+galleryContainer.addEventListener('click', clickOnimage);
 
+function action(imageAction) {
+    imageAction.preventDefault();
+}
 
-//galleryContainer.addEventListener('click', (event) => event.preventDefault());
+Array.from(galleryContainer).forEach(img => {
+    img.addEventListener('click', event => {
+        const image_selection = +event.target.dataset.imgMostrar
+    })
+})
 
 //const addGallery = builderGallery(galleryItems);
 //galleryContainer.innerHTML = addGallery;
