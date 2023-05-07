@@ -5,8 +5,7 @@ console.log(galleryItems);
 
 const galleryContainer = document.querySelector(".gallery");
 
-//function builderGallery(items) {
-    //return items
+
 const builderGallery = galleryItems
         .map((item) =>
         `<li class= "gallery__item">
@@ -33,6 +32,15 @@ Array.from(galleryContainer).forEach(img => {
     })
 })
 
-//const addGallery = builderGallery(galleryItems);
-//galleryContainer.innerHTML = addGallery;
-//galleryContainer.addEventListener('click', clickOnImage);
+
+//const btnAbrirModal = document.querySelector("#ServicioCliente");
+//const btnCerrarModal = document.querySelector("#cerrarmodal");
+//const modal = document.querySelector("#modal");
+
+//btnAbrirModal.addEventListener("click", () => {
+//modal.showModal();
+//});
+
+//btnCerrarModal.addEventListener("click", () => {
+//modal.close();
+//});
