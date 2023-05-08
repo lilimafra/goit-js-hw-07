@@ -1,4 +1,5 @@
 import { galleryItems } from './gallery-items.js';
+import { BasicLightBox } from 'basiclightbox';
 // Change code below this line
 
 console.log(galleryItems);
@@ -22,28 +23,7 @@ const builderGallery = galleryItems
 galleryContainer.insertAdjacentHTML("afterbegin", builderGallery);
 galleryContainer.addEventListener('click', (event) => event.preventDefault())
 
-let lightbox = new Simplelightbox('.gallery a', {
-    captionsData: 'alt',
-    captionDelay: 250,
-});
 
-//function action(imageAction) {imageAction.preventDefault();}
-
-Array.from('.gallery a').forEach(img => {
-    img.addEventListener('click', event => {
-        const image_selection = +event.target.dataset.imgMostrar
-    })
-})
-
-
-//const btnAbrirModal = document.querySelector(".gallery__image");
-//const btnCerrarModal = document.querySelector("#cerrarmodal");
-//const modal = document.querySelector("#modal");
-
-//btnAbrirModal.addEventListener("click", () => {
-//modal.showModal();
-//});
-
-//btnCerrarModal.addEventListener("click", () => {
-//modal.close();
-//});
+const instance = basicLightbox.create(
+    document.querySelector('#template')
+)
