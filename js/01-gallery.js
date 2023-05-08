@@ -20,20 +20,23 @@ const builderGallery = galleryItems
     
 
 galleryContainer.insertAdjacentHTML("afterbegin", builderGallery);
-galleryContainer.addEventListener('click', clickOnimage);
+galleryContainer.addEventListener('click', (event) => event.preventDefault())
 
-function action(imageAction) {
-    imageAction.preventDefault();
-}
+let lightbox = new Simplelightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+});
 
-Array.from(galleryContainer).forEach(img => {
+//function action(imageAction) {imageAction.preventDefault();}
+
+Array.from('.gallery a').forEach(img => {
     img.addEventListener('click', event => {
         const image_selection = +event.target.dataset.imgMostrar
     })
 })
 
 
-//const btnAbrirModal = document.querySelector("#ServicioCliente");
+//const btnAbrirModal = document.querySelector(".gallery__image");
 //const btnCerrarModal = document.querySelector("#cerrarmodal");
 //const modal = document.querySelector("#modal");
 
