@@ -1,5 +1,4 @@
 import { galleryItems } from './gallery-items.js';
-import { BasicLightBox } from 'basiclightbox';
 // Change code below this line
 
 console.log(galleryItems);
@@ -23,7 +22,32 @@ const builderGallery = galleryItems
 galleryContainer.insertAdjacentHTML("afterbegin", builderGallery);
 galleryContainer.addEventListener('click', (event) => event.preventDefault())
 
+galleryContainer.addEventListener('click', clickOnImage);
+
+function clickOnImage(ImageAction) {
+
+if (ImageAction.target.nodeName !== "IMG") {
+    return;
+}
 
 const instance = basicLightbox.create(
-    document.querySelector('#template')
-)
+    `<img src="${ImageAction.target.dataset.source}" width="400" height="200">`
+);
+    instance.show();
+    
+    galleryContainer.addEventListener("keydown", (ImageAction) => {
+        if (ImageAction.code === "Escape") {
+            instance.close()
+        }
+    })    
+}
+    
+    
+    
+    
+// import basicLightbox from 'basiclightbox';
+// const instance = basicLightbox.create(
+//   document.querySelector('#template')
+// )
+
+
