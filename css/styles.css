@@ -42,3 +42,15 @@
 .gallery__link:hover {
   cursor: zoom-in;
 }
+
+.sl-image {
+  top: 30px;
+  left: 152px;
+  display: block;
+}
+
+a {
+  display: block;
+  transform: translate(0px);
+  
+}

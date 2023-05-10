@@ -45,9 +45,6 @@ const instance = basicLightbox.create(
     
     
     
-// import basicLightbox from 'basiclightbox';
-// const instance = basicLightbox.create(
-//   document.querySelector('#template')
-// )
+
 
 
